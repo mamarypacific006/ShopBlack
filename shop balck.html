@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Black - Seu Marketplace Online</title>
+    <meta
+      name="description"
+      content="Marketplace completo com produtos diversos e lojas parceiras. Encontre tudo que precisa em um só lugar."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="page-shell navbar">
+        <a class="brand" href="#" onclick="scrollToTop()">
+          <div class="logo-mark"><img src="img/shop black (1).png" alt=""></div>
+          <strong>Shop Black</strong>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" type="button">☰</button>
+
+        <nav class="nav-links">
+          <a href="#hero">Início</a>
+          <a href="#featured">Produtos</a>
+          <a href="#stores">Lojas</a>
+        </nav>
+
+        <div class="action-row">
+          <button class="btn text-button admin-btn" id="adminLogin" type="button">AD</button>
+          <button class="btn text-button" id="themeToggle" type="button">☀️</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" id="hero">
+        <div class="hero-grid">
+          <div class="hero-visual">
+            <div class="hero-image-container">
+              <img id="heroImage" src="img/a melhor para você.png" alt="Imagem destaque" />
+            </div>
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow">Marketplace</p>
+            <h1>Shop Black te ofereçe os melhores Produtos</h1>
+            <p>
+              Como afiliados, selecionamos cuidadosamente produtos de fornecedores confiáveis para oferecer indicações seguras e uma experiência de compra 100% protegida.
+              Recomendado com confiança, para que você compre com total tranquilidade
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-panel" id="featured">
+        <div class="page-shell">
+          <div class="panel-box">
+            <div class="featured-header">
+              <div>
+                <h2>Produtos em Destaque</h2>
+                <p>Escolha a categoria e adicione ou edite até 100 produtos em cada seção.</p>
+              </div>
+              <div class="product-category-tabs">
+                <button class="active" type="button" data-category="mercado">Achadinhos do Mercado Pago</button>
+                <button type="button" data-category="shopee">Shopee</button>
+              </div>
+            </div>
+
+            <div class="category-info">
+              <span id="categoryCount">Carregando...</span>
+            </div>
+
+            <div id="productGrid" class="product-grid"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <section class="stores-section page-shell" id="stores">
+      <div class="page-shell">
+        <h2>Grandes Plataformas Parceiras</h2>
+        <p>Conectamos você aos maiores marketplaces do Brasil, oferecendo milhões de produtos com garantia e segurança.</p>
+        <div class="stores-grid" id="storesGrid">
+          <!-- Lojas serão carregadas dinamicamente -->
+        </div>
+      </div>
+    </section>
+
+
+        <div class="admin-shell">
+          <div class="admin-header">
+            <h2>Área do Administrador</h2>
+            <button class="text-button logout-btn" type="button" id="logoutAdmin">Sair</button>
+          </div>
+          <p id="adminPrompt" class="admin-prompt">Faça login como administrador para cadastrar ou editar produtos.</p>
+          <div class="editor-panel hidden" id="editorPanel">
+            <div class="admin-header">
+              <h3>Editar / Adicionar produto</h3>
+            </div>
+            <form id="adminForm">
+              <div class="form-row">
+                <label for="productCategory">Categoria</label>
+                <select id="productCategory">
+                  <option value="mercado">Achadinhos do Mercado Pago</option>
+                  <option value="shopee">Shopee</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="productName">Nome do produto</label>
+                <input id="productName" type="text" placeholder="Nome do produto" />
+              </div>
+              <div class="form-row">
+                <label for="productPrice">Preço</label>
+                <input id="productPrice" type="number" step="0.01" placeholder="0,00" />
+              </div>
+              <div class="form-row">
+                <label for="productImage">URL da imagem</label>
+                <input id="productImage" type="url" placeholder="https://..." />
+              </div>
+              <div class="form-row">
+                <label for="productDescription">Descrição</label>
+                <textarea id="productDescription" rows="3" placeholder="Descrição do produto"></textarea>
+              </div>
+              <div class="form-row">
+                <label for="productLink">Link de compra</label>
+                <input id="productLink" type="url" placeholder="https://..." />
+              </div>
+              <div class="form-actions">
+                <button class="btn" type="submit" id="saveButton">Adicionar produto</button>
+                <button class="btn btn-danger hidden" type="button" id="deleteButton">Excluir produto</button>
+                <button class="btn btn-secondary hidden" type="button" id="cancelEdit">Cancelar edição</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer page-shell">
+      <div class="footer-shell">
+        <div>
+          <strong>ShopBlack</strong>
+          <p>Seu marketplace de confiança para compras online seguras e convenientes.</p>
+        </div>
+        <div>
+          <small>Conectando compradores às melhores lojas parceiras desde 2024.</small>
+        </div>
+        <div>
+          <small>Criadora do site web shop black.</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
